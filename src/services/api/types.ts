@@ -13,11 +13,10 @@ export interface StationsResponse {
 }
 
 export interface StationDataRequest {
-  stationTriplets: string | string[];
-  elementCodes: string | string[];
-  beginDate: string; // YYYY-MM-DD
-  endDate: string; // YYYY-MM-DD
-  ordinal?: number;
+  stationTriplets: string;
+  elements: string;
+  beginDate: string;
+  endDate: string;
   duration?: string;
 }
 

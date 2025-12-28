@@ -23,12 +23,12 @@ export const snotelAPI = {
   ): Promise<Measurement[]> => {
     const params: StationDataRequest = {
       stationTriplets: stationTriplet,
-      elementCodes: elementCodes.join(','),
+      elements: elementCodes.join(','),
       beginDate,
       endDate,
     };
 
-    const response = await apiClient.get('/data', { params });
+    const response = await apiClient.get('/services/v1/data', { params });
     return response.data;
   },
 
