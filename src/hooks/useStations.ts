@@ -1,16 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { snotelAPI } from '@/services/api/snotel';
-import { Station } from '@/types/station';
+import { awdbApi, Station } from '@/services/api/awdb';
 
-export const useStations = (params?: {
-  networkCode?: string;
-  stateCode?: string;
-}) => {
-  const stationTriplets = `*:${params?.stateCode || '*'}:${params?.networkCode || 'SNTL'}`;
+export const useStations = (params: { networkCode: string }) => {
   return useQuery<Station[], Error>({
-    queryKey: ['stations', params],
-    queryFn: () => snotelAPI.getStations({ stationTriplets }),
-    staleTime: 1000 * 60 * 60 * 24,
-    retry: 2,
+    queryKey: ['stations', params.networkCode],
+    queryFn: () => awdbApi.getStations(params),
   });
 };

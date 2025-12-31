@@ -2,7 +2,6 @@
 
 interface ImportMetaEnv {
   readonly VITE_AWDB_API_URL: string;
-  readonly VITE_MAP_STYLE: string;
 }
 
 interface ImportMeta {

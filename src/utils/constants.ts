@@ -1,4 +1,4 @@
-export const APP_NAME = 'SNOTEL Data Viewer';
+export const APP_NAME = "How's the snow?";
 
 export const DEFAULT_ELEMENT_CODES = ['SNWD', 'WTEQ', 'TOBS', 'PREC'];
 

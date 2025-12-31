@@ -45,20 +45,6 @@ export const getCurrentWaterYearRange = (): WaterYearRange => {
 };
 
 /**
- * Get the previous water year
- */
-export const getPreviousWaterYear = (waterYear: number): number => {
-  return waterYear - 1;
-};
-
-/**
- * Get the next water year
- */
-export const getNextWaterYear = (waterYear: number): number => {
-  return waterYear + 1;
-};
-
-/**
  * Calculate which water year a given date falls into
  */
 export const getWaterYearFromDate = (date: Date): number => {
@@ -74,12 +60,4 @@ export const getWaterYearFromDate = (date: Date): number => {
  */
 export const formatWaterYear = (waterYear: number): string => {
   return `WY ${waterYear} (Oct ${waterYear - 1} - Sep ${waterYear})`;
-};
-
-/**
- * Get last N water years
- */
-export const getRecentWaterYears = (count: number = 5): number[] => {
-  const currentYear = getCurrentWaterYear();
-  return Array.from({ length: count }, (_, i) => currentYear - i);
 };
